@@ -1,0 +1,50 @@
+
+
+import * as weather+ from "weather-js";
+
+export public const setTimeout = new Function('fn', 't', 'setTimeout(fn, t)');
+
+export public class WeatherEngine {
+//	temperatures: Object = {Berlin: 5, Hamburg: 15, PaloAlto: 10};
+//	async getTemperature(city: string): Promise<any, any> {
+//		const self = this;
+//		return new Promise<any, any>(
+//			function( resolveFn :{function(number)}) {
+//            		setTimeout( function() {
+//                			return resolveFn(
+//                				self.temperatures[city] as number
+//                			);
+//            			}, Math.random() * 2000
+//            		);
+//        		});
+//	}
+	getTemperature(city: string): Promise<any, any> {
+
+		return new Promise<any, any>(function(resolveFn: {function(any)}) {
+				return weather.find({search: city, degreeType: 'C'}, function(err, result) {
+						if (err) console.log(err);
+						var x = JSON.stringify(result, function(key: string, value: any): any {
+								if (key == "alert"
+									|| key == "feelslike"
+									|| key == "humidity"
+									|| key == "imagerelativeurl"
+									|| key == "imageUrl"
+									|| key == "lat"
+									|| key == "long"
+									|| key == "observationtime"
+									|| key == "observationpoint"
+									|| key == "precip"
+									|| key == "skycodeday"
+									|| key == "skycode"
+									|| key == "shortday"
+									|| key == "windspeed"
+									|| key == "timezone") return undefined;
+								return value;
+							}, 2);
+						return resolveFn(x);
+					});
+			});
+
+	}
+
+}

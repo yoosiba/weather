@@ -1,0 +1,2 @@
+@@Global
+export external  public function setTimeout(Funtion, number)

@@ -1,0 +1,13 @@
+{
+  "location" : [
+  {
+      "config" : { },
+      "repoType" : "npm",
+      "projects" : {
+        "weather-js" : {
+          "version" : "@2.0.0"
+        }
+      }
+    }
+ ]
+}
