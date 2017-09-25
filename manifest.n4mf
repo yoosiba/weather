@@ -17,4 +17,8 @@ ProjectDependencies {
 	org.eclipse.n4js.mangelhaft,
 	org.eclipse.n4js.mangelhaft.assert,
 	weather-js
+
+}
+RequiredRuntimeLibraries {
+    n4js-runtime-es2015
 }

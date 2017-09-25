@@ -1,6 +1,7 @@
 import {WeatherEngine} from "WeatherEngine"
 
 
+
 export class WeatherEngineMock extends WeatherEngine{
 	temperatures: Object = {Berlin: 5, Hamburg: 15, PaloAlto: 10};
 	

@@ -4,15 +4,12 @@ import {N4Injector} from "n4js/lang/N4Injector"
 @GenerateInjector
 class MainComponent{
 	@Inject app : App;
-	
-	
 }
 
 
-(async function r(){
+(async function run(){
 	var mc : MainComponent = N4Injector.of(MainComponent).create(MainComponent);
-//	await mc.app.printTemeprature("Berlin, Germany")
+//	console.log(await mc.app.getWeatherData("Berlin, Germany"));
 	console.log(await mc.app.getWeatherData("71638 Ludwigsburg, Germany"));
 })();
-
 

@@ -23,7 +23,7 @@ export public class WeatherTest{
 	@Test
 	public async testBerlinData(){
 		  const data = await this.app.getWeatherData("Berlin");
-		  console.log(data == "city : Berlin, weather :: 5")
+		  Assert.isTrue(data == "city : Berlin, weather :: 5")
 	}
 	
 }
