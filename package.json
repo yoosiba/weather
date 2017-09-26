@@ -5,7 +5,7 @@
   "license": "EPL-1.0",
   "description": "Example weather app written in N4JS/JavaScript",
   "scripts": {
-    "test": "n4js-mangelhaft --projects . --compile --targetPlatformFile targetplatform.n4tp --targetPlatformInstallLocation build/npm --xunitReportFile build/weather-test-report.xml --xunitReportName weather-test-report --xunitReportPackage weather.tests"
+    "test": "n4js-mangelhaft --d --projects . --compile --targetPlatformFile targetplatform.n4tp --targetPlatformInstallLocation build/npm --xunitReportFile build/weather-test-report.xml --xunitReportName weather-test-report --xunitReportPackage weather.tests"
   },
   "repository": {
     "type": "git",
