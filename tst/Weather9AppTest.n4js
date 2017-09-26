@@ -1,7 +1,7 @@
 import {App} from "Weather9App";
 import {WeatherEngineMock} from "Weather9Mock";
 import {WeatherEngine} from "WeatherEngine";
-import {Assert} from "n4/mangel/assert/Assert";
+import {Assert} from "org/eclipse/n4js/mangelhaft/assert/Assert";
 
 @Bind(WeatherEngine, WeatherEngineMock)
 @Binder

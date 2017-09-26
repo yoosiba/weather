@@ -15,9 +15,6 @@ Sources {
 ProjectDependencies {
 	weather-js,
 	n4js.lang,
-	eu.numberfour.mangelhaft,
-    eu.numberfour.mangelhaft.assert,
-    /* eclipse - npm issue*/
     org.eclipse.n4js.mangelhaft,
 	org.eclipse.n4js.mangelhaft.assert
 
