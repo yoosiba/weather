@@ -13,10 +13,13 @@ Sources {
 	}
 }
 ProjectDependencies {
+	weather-js,
 	n4js.lang,
-	org.eclipse.n4js.mangelhaft,
-	org.eclipse.n4js.mangelhaft.assert,
-	weather-js
+	eu.numberfour.mangelhaft,
+    eu.numberfour.mangelhaft.assert,
+    /* eclipse - npm issue*/
+    org.eclipse.n4js.mangelhaft,
+	org.eclipse.n4js.mangelhaft.assert
 
 }
 RequiredRuntimeLibraries {
