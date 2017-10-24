@@ -1,0 +1,31 @@
+
+import {WeatherApp} from "WeatherApp";
+import {WeatherEngineMock} from "WeatherEngineMock";
+import {WeatherEngine} from "WeatherEngine";
+import {Assert} from "org/eclipse/n4js/mangelhaft/assert/Assert";
+
+@Bind(WeatherEngine, WeatherEngineMock)
+@Binder
+class TestBinder {}
+
+@GenerateInjector
+@UseBinder(TestBinder)
+export public class WeatherAppTest{
+	@Inject app : WeatherApp;
+	
+	@Test
+	public async testTypeOfWeatherData(){
+		  const data = await this.app.getWeatherData("Berlin");
+		  Assert.isTrue(typeof data === "string", "Wrong weather data type, expected <string>, was " + typeof data)
+		  Assert.isTrue(data.length > 0, "No weather data.")
+		  console.log("      data.length ", data.length)
+	}
+	
+	@Test
+	public async testBerlinData(){
+		  const data = await this.app.getWeatherData("Berlin");
+		  Assert.isTrue(data == "city : Berlin, weather :: 5")
+		  console.log("      data ", data)
+	}
+	
+}

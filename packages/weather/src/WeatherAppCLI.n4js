@@ -1,0 +1,16 @@
+
+import {WeatherApp} from "WeatherApp"
+import {N4Injector} from "n4js/lang/N4Injector"
+
+@GenerateInjector
+class MainComponent{
+	@Inject app : WeatherApp;
+}
+
+
+(async function run(){
+	var mc : MainComponent = N4Injector.of(MainComponent).create(MainComponent);
+//	console.log(await mc.app.getWeatherData("Berlin, Germany"));
+	console.log(await mc.app.getWeatherData("71638 Ludwigsburg, Germany"));
+})();
+

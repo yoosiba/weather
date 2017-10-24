@@ -1,0 +1,33 @@
+
+import * as weather+ from "weather-js";
+
+export public class WeatherEngine {
+	getTemperature(city: string): Promise<any, any> {
+		return new Promise<any, any>(function(resolveFn: {function(any)}) {
+				return weather.find({search: city, degreeType: 'C'}, function(err, result) {
+						if (err) console.log(err);
+						var x = JSON.stringify(result, function(key: string, value: any): any {
+								if (key == "alert"
+									|| key == "feelslike"
+									|| key == "humidity"
+									|| key == "imagerelativeurl"
+									|| key == "imageUrl"
+									|| key == "lat"
+									|| key == "long"
+									|| key == "observationtime"
+									|| key == "observationpoint"
+									|| key == "precip"
+									|| key == "skycodeday"
+									|| key == "skycode"
+									|| key == "shortday"
+									|| key == "windspeed"
+									|| key == "timezone") return undefined;
+								return value;
+							}, 2);
+						return resolveFn(x);
+					});
+			});
+
+	}
+
+}

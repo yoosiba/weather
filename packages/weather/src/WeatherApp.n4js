@@ -1,0 +1,13 @@
+
+import {WeatherEngine} from "WeatherEngine";
+
+export class WeatherApp {
+
+	@Inject
+	we: WeatherEngine;
+
+	async getWeatherData(city: string) :string {
+		let weather = await this.we.getTemperature(city);
+		return "city : " + city + ", weather :: " + weather;
+	}
+}

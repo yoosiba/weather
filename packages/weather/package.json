@@ -1,11 +1,11 @@
 {
-  "name": "weather_wrapper",
+  "name": "weather",
   "version": "0.0.1",
   "author": "Jakub Siberski <jakub.siberski@gmail.com>",
   "license": "EPL-1.0",
   "description": "Example weather app written in N4JS/JavaScript",
   "scripts": {
-    "test": "n4js-mangelhaft --scan ./packages --compile --targetPlatformFile targetplatform.n4tp --targetPlatformInstallLocation build/npm --xunitReportFile build/weather-test-report.xml --xunitReportName weather-test-report --xunitReportPackage weather.tests"
+    "test": "n4js-mangelhaft --scan . --compile --targetPlatformFile targetplatform.n4tp --targetPlatformInstallLocation build/npm --xunitReportFile build/weather-test-report.xml --xunitReportName weather-test-report --xunitReportPackage weather.tests"
   },
   "repository": {
     "type": "git",
