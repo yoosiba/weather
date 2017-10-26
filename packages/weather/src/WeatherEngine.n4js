@@ -2,8 +2,8 @@
 import * as weather+ from "weather-js";
 
 export public class WeatherEngine {
-	getTemperature(city: string): Promise<any, any> {
-		return new Promise<any, any>(function(resolveFn: {function(any)}) {
+	getTemperature(city: string): Promise<string, any> {
+		return new Promise<string, any>(function(resolveFn: {function(string)}) {
 				return weather.find({search: city, degreeType: 'C'}, function(err, result) {
 						if (err) console.log(err);
 						var x = JSON.stringify(result, function(key: string, value: any): any {

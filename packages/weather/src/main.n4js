@@ -10,7 +10,6 @@ class MainComponent{
 
 (async function run(){
 	var mc : MainComponent = N4Injector.of(MainComponent).create(MainComponent);
-//	console.log(await mc.app.getWeatherData("Berlin, Germany"));
 	console.log(await mc.app.getWeatherData("71638 Ludwigsburg, Germany"));
 })();
 

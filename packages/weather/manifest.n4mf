@@ -13,8 +13,6 @@ Sources {
 	}
 }
 
-MainModule: "WeatherApp"
-
 ProjectDependencies {
 	weather-js,
 	n4js.lang,

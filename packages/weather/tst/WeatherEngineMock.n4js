@@ -4,16 +4,16 @@ import {WeatherEngine} from "WeatherEngine"
 
 
 export class WeatherEngineMock extends WeatherEngine{
-	temperatures: Object = {Berlin: 5, Hamburg: 15, PaloAlto: 10};
+	temperatures: Object = {Berlin: '5', Hamburg: '15', PaloAlto: '10'};
 	
 	@Override
-	async getTemperature(city: string): Promise<any, any> {
+	getTemperature(city: string): Promise<string, any> {
 		const self = this;
-		return new Promise<any, any>(
-			function( resolveFn :{function(number)}) {
+		return new Promise<string, any>(
+			function( resolveFn :{function(string)}) {
             		setTimeout( function() {
                 			return resolveFn(
-                				self.temperatures[city] as number
+                				self.temperatures[city] as string
                 			);
             			}, Math.random() * 2000
             		);
